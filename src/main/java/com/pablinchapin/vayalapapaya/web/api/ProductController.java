@@ -71,6 +71,19 @@ public class ProductController {
     }
     
     
+    @RequestMapping(
+            path = "products/byCategory/{id}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Collection<Product>> getProductsByCategory(@PathVariable("id") Long id){
+        Collection<Product> products = productService.findByCategoryId(id);
+        if(products == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+    
     //UPDATE
     @RequestMapping(
             path = "products/{id}",

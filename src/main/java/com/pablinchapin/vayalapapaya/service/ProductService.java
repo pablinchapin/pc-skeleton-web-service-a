@@ -18,7 +18,7 @@ public interface ProductService {
     
     Product findOne(Long id);
     
-    Collection<Product> findBycategoryId(Long id);
+    Collection<Product> findByCategoryId(Long id);
     
     Product create(Product product);
     
