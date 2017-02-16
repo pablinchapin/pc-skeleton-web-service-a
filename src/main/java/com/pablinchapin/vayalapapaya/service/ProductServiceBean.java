@@ -40,7 +40,7 @@ public class ProductServiceBean implements ProductService {
     }
 
     @Override
-    public Collection<Product> findBycategoryId(Long id) {
+    public Collection<Product> findByCategoryId(Long id) {
         Collection<Product> products = productRepository.findByCategoryId(id);
         return products;
     }
